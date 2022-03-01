@@ -18,11 +18,5 @@ jobs:
         pantheon_repo: '${{ secrets.PANTHEON_REPO }}'
       run: |
         git remote add pantheon $pantheon_repo
-        git push pantheon HEAD:master 
+        git push pantheon HEAD:master --force
 # May have to add a find and replace from local to dev environment
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
