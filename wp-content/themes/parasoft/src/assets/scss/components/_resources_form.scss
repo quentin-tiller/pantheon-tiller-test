@@ -1,0 +1,286 @@
+.resources-form {
+    position: relative;
+    padding: rem-calc(20 0);
+    .resources-search {
+        form {
+            ul {
+                li {
+                    &.sf-field-taxonomy-types {
+                        padding: 10px 0 16px;
+                        ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            li {
+                               margin-right: 42px;
+                                @include bp(tabletmd) {
+                                    margin-right: 20px;
+                                }
+                                /*&.sf-item-0 {
+                                 order: 3;   
+                                }*/
+                                label {
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+                    &.sf-field-taxonomy-resource_type {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: 0 20px 0 0;
+                        max-width: 270px;
+                        width: 100%;
+                        @include bp(lg) {
+                            margin: rem-calc(0 12 0 0);
+                            max-width: 250px;
+                        }
+                        @include bp(tabletmd) {
+                            max-width: 235px;
+                        }
+                        @include bp(sm) {
+                            max-width: 100%;
+                            width: 100%;
+                            margin: 0;
+                            padding: 5px 0;
+                        }
+                        label {
+                            width: 100%;
+                            @include bp(sm) {
+                                width: 100%;
+                            }
+                            &:focus {
+                                outline: none;
+                            }
+                            select {
+                                border: 1px solid $dark-navy-blue;
+                                background-color: $dark-navy-blue;
+                                font-family: $zeitung;
+                                font-size: rem-calc(17);
+                                line-height: 1.2;
+                                color: $white;
+                                font-weight: $bold;
+                                padding: 12px 45px 12px 20px;
+                                text-transform: uppercase;
+                                border-radius: 50px;
+                                -webkit-appearance: none;
+                                text-align: center;
+                                background-image: url(../images/dropdown-arrow.svg);
+                                background-repeat: no-repeat;
+                                background-size: 15px 12px;
+                                background-position: 92% center;
+                                max-width: 100%;
+                                width: 100%;
+                                min-width: inherit;
+                                cursor: pointer;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                @include bp(lg) {
+                                    font-size:rem-calc(15);
+                                    padding: rem-calc(10 30);
+                                }
+                                @include bp(sm) {
+                                    width: 100%;
+                                    max-width: 100%;
+                                }
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                    &.sf-field-taxonomy-topic {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: 0 20px 0 0;
+                        max-width: 300px;
+                        width: 100%;
+                        @include bp(lg) {
+                            margin: rem-calc(0 12 0 0);
+                            max-width: 250px;
+                        }
+                        @include bp(sm) {
+                            max-width: 100%;
+                            width: 100%;
+                            margin: 0;
+                            padding: 5px 0;
+                        }
+                        label {
+                            width: 100%;
+                            @include bp(sm) {
+                                width: 100%;
+                            }
+                            &:focus {
+                                outline: none;
+                            }
+                            select {
+                                border: 1px solid $dark-navy-blue;
+                                background-color: $dark-navy-blue;
+                                font-family: $zeitung;
+                                font-size: rem-calc(17);
+                                line-height: 1.2;
+                                color: $white;
+                                font-weight: $bold;
+                                padding: 12px 45px 12px 20px;
+                                text-transform: uppercase;
+                                border-radius: 50px;
+                                -webkit-appearance: none;
+                                text-align: center;
+                                background-image: url(../images/dropdown-arrow.svg);
+                                background-repeat: no-repeat;
+                                background-size: 15px 12px;
+                                background-position: 92% center;
+                                max-width: 100%;
+                                width: 100%;
+                                min-width: inherit;
+                                cursor: pointer;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                @include bp(lg) {
+                                    font-size:rem-calc(15);
+                                    padding: rem-calc(10 30);
+                                }
+                                @include bp(sm) {
+                                    width: 100%;
+                                    max-width: 100%;
+                                }
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                    &.sf-field-taxonomy-products {
+                        display: inline-block;
+                        vertical-align: middle;
+                        max-width: 200px;
+                        width: 100%;
+                        @include bp(lg) {
+                            max-width: 180px;
+                        }
+                        @include bp(sm) {
+                            max-width: 100%;
+                            width: 100%;
+                            margin: 0;
+                            padding: 5px 0;
+                        }
+                        label {
+                            width: 100%;
+                            @include bp(sm) {
+                                width: 100%;
+                            }
+                            &:focus {
+                                outline: none;
+                            }
+                            select {
+                                border: 1px solid $dark-navy-blue;
+                                background-color: $dark-navy-blue;
+                                font-family: $zeitung;
+                                font-size: rem-calc(17);
+                                line-height: 1.2;
+                                color: $white;
+                                font-weight: $bold;
+                                padding: 12px 35px 12px 25px;
+                                text-transform: uppercase;
+                                border-radius: 50px;
+                                -webkit-appearance: none;
+                                text-align: center;
+                                background-image: url(../images/dropdown-arrow.svg);
+                                background-repeat: no-repeat;
+                                background-size: 15px 12px;
+                                background-position: 92% center;
+                                max-width: 100%;
+                                width: 100%;
+                                min-width: inherit;
+                                cursor: pointer;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                @include bp(lg) {
+                                    font-size:rem-calc(15);
+                                    padding: rem-calc(10 30);
+                                }
+                                @include bp(sm) {
+                                    width: 100%;
+                                    max-width: 100%;
+                                }
+                                &:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+                    &.sf-field-search {
+                        display: inline-block;
+                        vertical-align: middle;
+                        max-width: 465px;
+                        width: 100%;
+                        margin: 0 0 0 25px;
+                        @include bp(xl) {
+                            max-width: calc(100% - 830px);
+                            margin: 0 0 0 20px;
+                        }
+                        @include bp(xlthr) {
+                            max-width: 280px;
+                        }
+                        @include bp(lg) {
+                            max-width: 200px;
+                            margin: 0 0 0 20px;
+                        }
+                        @include bp(tabletmd) {
+                            max-width: 100%;
+                            margin: 0 0 0 0;
+                        }
+                        label {
+                            width: 100%;
+                            input {
+                                background-color: $white;
+                                border: 1px solid #A2A9AD;
+                                color: #7C878D;
+                                border-radius: 50px;
+                                padding: 13px 21px;
+                                text-transform: uppercase;
+                                width: 100%;
+                                font-family: $Lato;
+                                font-size: rem-calc(17);
+                                font-weight: $bold;
+                                @include bp(lg) {
+                                    font-size: rem-calc(17);
+                                }
+                            }
+                        }
+                    }
+                    &.sf-field-submit {
+                        position: absolute;
+                        right: 40px;
+                        bottom: 28px;
+                        padding: 0;
+                        @include bp(xlthr) {
+                            right: 30px;
+                            bottom: 26px;
+                        }
+                        @include bp(xl) {
+                            right: 40px;
+                            bottom: 26px;
+                        } 
+                        @include bp(lg) {
+                            right: 35px;
+                            bottom: 28px;
+                        }    
+                        input[type="submit"] {
+                            background-color: transparent;
+                            font-size: 0;
+                            background-image: url(../images/search-icon.svg);
+                            -webkit-appearance: none;
+                            width: 19px;
+                            height: 19px;
+                            border: 0;
+                            background-position: center center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-color: transparent
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

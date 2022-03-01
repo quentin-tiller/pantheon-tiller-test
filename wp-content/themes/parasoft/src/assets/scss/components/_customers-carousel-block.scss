@@ -1,0 +1,80 @@
+.customers-carousel-block {
+    position: relative;
+    padding: rem-calc(60 0);
+    &.top-carousel-border {
+        border-top: 1px solid #a2a9ad;
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(30 0 30);
+    }
+    .heading {
+        margin: rem-calc(0 0 50 0);
+        h2 {
+            color: $dark-navy-blue;
+        }
+    }
+    .customers-carousel-wrap {
+        padding: rem-calc(0 50);
+        @include bp(lg) {
+            padding: rem-calc(0 30);
+        }
+        .logo {
+            padding: rem-calc(0 20);
+            @include bp(tabletsm) {
+                padding: rem-calc(0 40);
+            }
+            &:focus {
+                outline: none;
+            }
+            img {
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        button {
+            width: rem-calc(18);
+            height: rem-calc(48);
+            &.slick-arrow {
+                &.slick-prev {
+                    left: 0;
+                    &:before {
+                        content: "";
+                        background-image: url(../images/slider-left-icon.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: rem-calc(18);
+                        height: rem-calc(48);
+                        position: absolute;
+                        left: 0px;
+                        top: 0;
+                        z-index: 1;
+                        opacity: 1;
+                        @include bp(lg) {
+                            top: -5px;
+                        }
+                    }
+                }
+                &.slick-next {
+                    right: 0;
+                    &:before {
+                        content: "";
+                        background-image: url(../images/slider-right-icon.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 18px;
+                        height: 48px;
+                        position: absolute;
+                        right: 6px;
+                        top: 0;
+                        @include bp(lg) {
+                            top: -9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

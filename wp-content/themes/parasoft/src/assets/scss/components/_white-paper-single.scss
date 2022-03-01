@@ -1,0 +1,329 @@
+.white-paper-single {
+    position: relative;
+    .white-paper-cont {
+        .content {
+            padding: rem-calc(60 0 85 110);
+            @include bp(lg) {
+                padding: rem-calc(30 0 45);
+            }
+            span {
+                font-size: rem-calc(18);
+                color: $light-silver;
+                text-transform: uppercase;
+                border-bottom: 1px solid #d9e6ee;
+                padding-bottom: 12px;
+                margin-bottom: 18px;
+                display: inline-block;
+                @include bp(lg) {
+                    font-size: rem-calc(16);
+                    padding-bottom: 8px;
+                    margin-bottom: 14px;
+                }
+            }
+            h2 {
+                color: $dark-navy-blue;
+                font-size: rem-calc(38);
+                font-weight: $bold;
+                letter-spacing: -0.4px;
+                margin-bottom: rem-calc(38);
+                @include bp(lg) {
+                    font-size: rem-calc(30);
+                    margin-bottom: rem-calc(25);
+                }
+                @include bp(tabletXl) {
+                    font-size: rem-calc(28);
+                    margin: rem-calc(0 0 20 0);
+                }
+            }
+            h3 {
+                color: $blue;
+                font-size: rem-calc(23);
+                letter-spacing: 0;
+                line-height: rem-calc(34);
+                @include bp(lg) {
+                    font-size: rem-calc(21);
+                    line-height: rem-calc(24);
+                }
+            }
+        }
+    }
+}
+
+.white-paper-form-sec {
+    padding: rem-calc(60 0 85);
+    position: relative;
+    overflow: hidden;
+    &:before {
+        content: "";
+        background-color: #00385f;
+        width: 120%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: skew(-50deg);
+        transform-origin: 100% 140%;
+        @include bp(tabletsm) {
+            transform-origin: 100% 100%;
+        }
+    }
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    .white-paper-img {
+        margin: -109px 0 0 122px;
+        @include bp(lg) {
+            margin: -100px 0 0 0px;
+        }
+        @include bp(tabletsm) {
+            margin: 0 0 0 0px;
+            text-align: center;
+        }
+        img {
+            @include bp(tabletsm) {
+               max-width: 60%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.white-paper-detail-sec {
+    padding: rem-calc(110 0);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    .white-paper-detail-cont {
+        padding: rem-calc(0 0 54 110);
+        @include bp(lg) {
+            padding: rem-calc(0 0 30 0);
+        }
+        h3 {
+            font-size: rem-calc(25);
+            color: $blue;
+            font-weight: $bold;
+            font-family: $Lato;
+            line-height: 1.3;
+            margin-bottom: rem-calc(27);
+            @include bp(tabletXl) {
+                font-size: rem-calc(22);
+            }
+        }
+        h5 {
+            color: $gray;
+            font-weight: $bold;
+            font-family: $Lato;
+            font-size: rem-calc(20);
+            text-transform: uppercase;
+            letter-spacing: -0.7px;
+            @include bp(tabletXl) {
+                font-size: rem-calc(18);
+            }
+        }
+        ul {
+            padding: rem-calc(12 0 0 47);
+            li {
+                color: $gray;
+                font-size: rem-calc(20);
+                font-weight: $normal;
+                font-family: $Lato;
+                margin: rem-calc(0 0 13 0);
+                @include bp(tabletXl) {
+                    font-size: rem-calc(18);
+                }
+            }
+        }
+    }
+    .white-paper-accordion-list {
+        .accordion-block-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            width: 100%;
+            .accordion {
+                .card {
+                    border: 0;
+                    margin-bottom: rem-calc(26.5);
+                    background-color: transparent;
+                    .card-header {
+                        background-color: transparent;
+                        border: 0;
+                        padding: 0;
+                        margin: 0;
+                        border-radius: 10px;
+                        h2 {
+                            font-size: 0;
+                            position: relative;
+                            @include transition(0.5s, all, ease-in-out);
+                            &:hover {
+                                &:before {
+                                    content: "-";
+                                    background-color: transparent;
+                                    width: 37px;
+                                    height: 37px;
+                                    position: absolute;
+                                    right: 20px;
+                                    top: 50%;
+                                    border-radius: 50%;
+                                    transform: translateY(-50%);
+                                    -webkit-transform: translateY(-50%);
+                                    -ms-transform: translateY(-50%);
+                                    color: $white;
+                                    border: 1px solid $white;
+                                    font-family: $proximanova;
+                                    font-size: rem-calc(30);
+                                    font-weight: $bold;
+                                    text-align: center;
+                                    @include bp(tabletsm) {
+                                        width: rem-calc(25);
+                                        height: rem-calc(25);
+                                        line-height: rem-calc(20);
+                                    }
+                                }
+                                button {
+                                    background-color: #0e92d1;
+                                    color: $white;
+                                }
+                            }
+                            &.current-card {
+                                &:before {
+                                    content: "-";
+                                    background-color: transparent;
+                                    width: 37px;
+                                    height: 37px;
+                                    position: absolute;
+                                    right: 20px;
+                                    top: 50%;
+                                    border-radius: 50%;
+                                    transform: translateY(-50%);
+                                    -webkit-transform: translateY(-50%);
+                                    -ms-transform: translateY(-50%);
+                                    color: $white;
+                                    border: 1px solid $white;
+                                    font-family: $proximanova;
+                                    font-size: rem-calc(30);
+                                    font-weight: $bold;
+                                    text-align: center;
+                                    @include bp(tabletsm) {
+                                        width: rem-calc(25);
+                                        height: rem-calc(25);
+                                        line-height: rem-calc(20);
+                                    }
+                                }
+                                button {
+                                    background-color: #0e92d1;
+                                    color: $white;
+                                }
+                            }
+                            &:before {
+                                content: "+";
+                                background-color: transparent;
+                                width: 37px;
+                                height: 37px;
+                                position: absolute;
+                                right: 20px;
+                                top: 50%;
+                                border-radius: 50%;
+                                transform: translateY(-50%);
+                                -webkit-transform: translateY(-50%);
+                                -ms-transform: translateY(-50%);
+                                color: #0e93d2;
+                                border: 1px solid #0e93d2;
+                                font-family: $proximanova;
+                                font-size: rem-calc(30);
+                                font-weight: $bold;
+                                text-align: center;
+                                @include bp(tabletsm) {
+                                    width: rem-calc(25);
+                                    height: rem-calc(25);
+                                    line-height: rem-calc(25);
+                                    font-size: rem-calc(20);
+                                }
+                            }
+                            button {
+                                color: $blue;
+                                border: 1px solid $blue;
+                                background-color: transparent;
+                                padding: 0;
+                                font-size: rem-calc(24);
+                                border-radius: 10px;
+                                background-color: transparent;
+                                display: block;
+                                padding: rem-calc(15 30);
+                                width: 100%;
+                                letter-spacing: -0.2px;
+                                text-align: left;
+                                text-transform: inherit;
+                                font-family: $zeitung;
+                                @include bp(tabletmd) {
+                                    font-size: rem-calc(22);
+                                    padding: rem-calc(12 25);
+                                }
+                                @include bp(tabletsm) {
+                                    font-size: rem-calc(18);
+                                    padding: rem-calc(10 50 10 20);
+                                }
+                            }
+                        }
+                    }
+                    .card-body {
+                        border: 0;
+                        padding: rem-calc(29 70 6 36);
+                        @include bp(tabletmd) {
+                            padding: rem-calc(20 20 5 20 );
+                        }
+                        p {
+                            margin-bottom: rem-calc(6);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .accordion-btn {
+        margin: rem-calc(29 0 0 0);
+        text-align: center;
+        a {
+            &.btn {
+                padding: rem-calc(12 60);
+            }
+        }
+    }
+}
+.white-paper-about-cont {
+    padding: rem-calc(100 0 95);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    .about-cont {
+        padding: rem-calc(3 126 0 110);
+        @include bp(lg) {
+            padding: rem-calc(0);
+        }
+        h2 {
+            color: $dark-navy-blue;
+            font-size: rem-calc(34);
+            letter-spacing: 0.2px;
+            margin: rem-calc(0 0 28 0);
+            @include bp(tabletXl) {
+                margin: rem-calc(0 0 12 0);
+                font-size: rem-calc(28);
+            }
+        }
+        p {
+            letter-spacing: -0.1px;
+            line-height: 1.55;
+            @include bp(tabletXl) {
+                letter-spacing: 0;
+            }
+        }
+    }
+}

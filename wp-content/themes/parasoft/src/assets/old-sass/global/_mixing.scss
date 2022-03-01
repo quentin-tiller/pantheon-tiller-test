@@ -1,0 +1,296 @@
+// Mixins
+
+// Q's mixins
+
+
+
+// THIS FILE IS FOR EASY SET UP ON NEW PROJECTS BASED OFF OF THE STYLE GUIDE
+
+//    ######  ######## ########         ##     ## ########  
+//   ##    ## ##          ##            ##     ## ##     ## 
+//   ##       ##          ##            ##     ## ##     ## 
+//    ######  ######      ##    ####### ##     ## ########  
+//         ## ##          ##            ##     ## ##        
+//   ##    ## ##          ##            ##     ## ##        
+//    ######  ########    ##             #######  ##        
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+// CHANGE WITH CAUTION //////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$svg-path: () !default;
+
+// CALCULATE CONTAINER VALUES FOR MIXINS
+$row_ratio: null;
+$row_max_width: null;
+$row_min_width: null;
+$row_width: null;
+$row_maxed: null;
+
+$min: 320;
+$container-max: 1320;
+$max: 1600;
+$column-gap: 20;
+
+$row_max_width: $container-max;
+$row_min_width: $min - ($column-gap * 2);
+$row_width: ($row_min_width / $min);
+$row_ratio: $row_width * 100;
+
+$i: $container-max;
+$row_maxed: 0;
+$row_maxed: $i - 1;
+$largest: $i * 1px;
+
+// Add Units to these variables.
+$row_max_width: $row_max_width * 1px;
+$row_min_width: $row_min_width * 1px;
+$row_width: $row_width * 100%;
+$row_maxed: $row_maxed * 1px;
+
+// fonts
+$sans: sans-serif !default;
+$sans-alt: monospace !default;
+$serif: serif !default;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//  ######  ########     ###     ######  #### ##    ##  ######   
+// ##    ## ##     ##   ## ##   ##    ##  ##  ###   ## ##    ##  
+// ##       ##     ##  ##   ##  ##        ##  ####  ## ##        
+//  ######  ########  ##     ## ##        ##  ## ## ## ##   #### 
+//       ## ##        ######### ##        ##  ##  #### ##    ##  
+// ##    ## ##        ##     ## ##    ##  ##  ##   ### ##    ##  
+//  ######  ##        ##     ##  ######  #### ##    ##  ######   
+
+// CALCULATIONS FOR .PAD
+$paddingMin: 100px; //pad-mobile
+$paddingMax: 200px; //pad-desktop
+$paddingMdMin: 75px;//medium pad sizing mobile
+$paddingMd: 150px;//medium pad sizing
+$nav-height: 188px;
+
+// STANDARD BREAKPOINTS FOR BREAK MIXIN
+$smallest : 320px !default; //DO NOT CHANGE!
+$small: 480px !default;
+$small-medium: 640px !default;
+$medium: 768px !default;
+$large: 960px !default;
+$larger: 1024px !default;
+
+
+//  ######   #######  ##        #######  ########   ######  
+// ##    ## ##     ## ##       ##     ## ##     ## ##    ## 
+// ##       ##     ## ##       ##     ## ##     ## ##       
+// ##       ##     ## ##       ##     ## ########   ######  
+// ##       ##     ## ##       ##     ## ##   ##         ## 
+// ##    ## ##     ## ##       ##     ## ##    ##  ##    ## 
+//  ######   #######  ########  #######  ##     ##  ######  
+
+$black: #000;
+$white: #FFF;
+$yellow: #FFD739;
+$blue: #1EE3CF;
+$purple: #6807F9;
+
+
+@mixin break ($size) {
+	@media screen and (min-width: $size) {
+	  @content;
+	}
+  }
+
+
+
+/// Scales a value from $a to $b using `vw` with an optional starting breakpoint paramater
+/// @param {Number} $prop - the property to scale
+/// @param {Number} $a - initial value
+/// @param {Number} $b - the value to scale to
+/// @param {Number} $breakpoint - where to start the scaling. default is the value of $smallest;
+
+@mixin scale( $prop, $y1, $y2, $x1: null, $x2: null ) {
+  // $x represents the view port width and $y represents the value of the
+  // property you're trying to scale. When we graph that as:
+  // p1 = $x1, $y1: a point at the smallest view width the smallest value
+  // p2 = $x2, $y2: a point at the largest view width the largest value
+  // We can now calculate the slope of the line from p1 to p2 and using that
+  // slope we can calculate what the value(y) should be at any given point in
+  // the view width(x). We will have to offset by the starting point once we
+  // calc the y value however.
+  // The equation is:
+  // (((($x1 - $x2) / ($y1 - $y2)) * (x - $x1)) + $y1)
+  //   |-----Calculate Slope-----|   | |             |
+  //   |-------Calculate value(y)----+-|             |
+  //                                 |--With Offset--|
+
+  @if ( $x1 == null ) { $x1: $smallest; }
+  @if ( $x2 == null ) { $x2: $largest; }
+
+  $x1: strip-unit($x1);
+  $x2: strip-unit($x2);
+
+  $slope: strip-unit(($y1 - $y2) / ($x1 - $x2));
+
+  #{$prop}: $y1;
+
+  @include break($x1+"px") {
+    #{$prop}: calc((#{$slope} * (100vw - #{$x1}px)) + #{$y1});
+  }
+
+  @include break($x2+"px") {
+    #{$prop}: $y2;
+  }
+}
+// for example look at pad below 
+
+
+// simple padding helper
+$minHalf: ($paddingMin / 4) * 2;
+$maxHalf: ($paddingMax / 4) * 2;
+.pad {
+  @include scale('padding-top', $paddingMin, $paddingMax, $large);
+  @include scale('padding-bottom', $paddingMin, $paddingMax, $large);
+  
+  &-top {
+    @include scale('padding-top', $paddingMin, $paddingMax, $large);
+  }
+
+  &-bottom {
+    @include scale('padding-bottom', $paddingMin, $paddingMax, $large);
+  }
+
+  &-medium { 
+    @include scale('padding-top', $paddingMdMin, $paddingMd, $large);
+    @include scale('padding-bottom', $paddingMdMin, $paddingMd, $large);  
+
+    &-top {
+      @include scale('padding-top', $paddingMdMin, $paddingMd, $large);
+    }
+    &-bottom {
+      @include scale('padding-bottom', $paddingMdMin, $paddingMd, $large);  
+    }    
+  }
+
+  &-small { 
+    @include scale('padding-top', $minHalf, $maxHalf, $large);
+    @include scale('padding-bottom', $minHalf, $maxHalf, $large);  
+    &-top {
+      @include scale('padding-top', $minHalf, $maxHalf, $large);
+    }
+    &-bottom {
+      @include scale('padding-bottom', $minHalf, $maxHalf, $large);  
+    }    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************ Placeholder ************/
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  :-moz-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+/************ Transition *************/
+@mixin transition($element, $time, $transition-name) {
+  -webkit-transition: $element $time $transition-name;
+  -moz-transition: $element $time $transition-name;
+  -ms-transition: $element $time $transition-name;
+  -o-transition: $element $time $transition-name;
+  transition: $element $time $transition-name;
+}
+
+/************ Breakpoints *************/
+@mixin bp($point) {
+  @if $point == xxxsm {
+    @media (max-width: 360px) {
+      @content;
+    }
+  }
+  @if $point == xxsm {
+    @media (max-width: 360px) {
+      @content;
+    }
+  } @else if $point == xsm {
+    @media (max-width: 479px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (max-width: 575px) {
+      @content;
+    }
+  } @else if $point == tabletsm {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == tabletmd {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $point == tabletXl {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == lgmin {
+    @media (min-width: 1201px) {
+      @content;
+    }
+  } @else if $point == xlthr {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  } @else if $point == xl {
+    @media (max-width: 1366px) {
+      @content;
+    }
+  } @else if $point == xxlmax {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  } @else if $point == xlmin {
+    @media (min-width: 1366px) {
+      @content;
+    }
+  } @else if $point == xxlmin {
+    @media (min-width: 1921px) {
+      @content;
+    }
+  } @else if $point == xxxlmin {
+    @media (min-width: 2000px) {
+      @content;
+    }
+  }
+}

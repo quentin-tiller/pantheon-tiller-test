@@ -1,0 +1,80 @@
+.styled-list-block {
+    position: relative;
+    padding: rem-calc(90 0 42);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 40);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    .heading {
+        margin: rem-calc(0 0 44 0);
+        text-align: center;
+        @include bp(tabletmd) {
+            margin: rem-calc(0 0 20 0);
+        }
+        h2 {
+            color: $dark-navy-blue;
+        }
+    }
+    .styled-block-list {
+        margin: rem-calc(0 0 31 0);
+        @include bp(tabletmd) {
+            margin: rem-calc(0 0 30 0);
+        }
+        .styled-list-block-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            padding: rem-calc(14 220 14 147);
+            @include bp(lg) {
+                padding: rem-calc(10 60 10 60);
+            }
+            @include bp(tabletmd) {
+                padding: rem-calc(10 0 10 0);
+            }
+            .icon {
+                max-width: rem-calc(50);
+                width: 100%;
+                padding: rem-calc(5 0 0 0);
+                @include bp(tabletXl) {
+                    max-width: rem-calc(35);
+                }
+            }
+            .styled-list-cont {
+                width: calc(100% - 50px);
+                padding: 0 0 0 24px;
+                h3 {
+                    font-size: rem-calc(24);
+                    color: $blue;
+                    font-weight: $bold;
+                    margin-bottom: rem-calc(8);
+                    @include bp(tabletXl) {
+                        font-size: rem-calc(22);
+                    }
+                }
+                p {
+                    margin-bottom: rem-calc(10);
+                }
+                .styled-list-btn {
+                    text-align: right;
+                    margin: rem-calc(15 0 0 0);
+                    a {
+                        text-transform: uppercase;
+                        font-size: rem-calc(16);
+                        padding: rem-calc(8 25);
+                        border: 1px solid #8dc63f;
+                        color: #8dc63f;
+                        border-radius: 50px;
+                        display: inline-block;
+                        vertical-align: top;
+                        font-weight: $bold;
+                        &:hover {
+                            background-color: #8dc63f;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,271 @@
+.labeled-carousel-block {
+    position: relative;
+    padding: rem-calc(100 0 114);
+    .container {
+        @include bp(tabletsm) {
+            max-width: 100%;
+        }
+    }
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    .heading {
+        max-width: 900px;
+        margin: 0 auto 52px;
+        width: 100%;
+        @include bp(tabletsm) {
+            margin-bottom: rem-calc(30);
+        }
+        h2 {
+            color: $dark-navy-blue;
+        }
+    }
+    .labeled-carousel-wrap {
+        .labeled-carousel-slider-main {
+            .labeled-carousel-nav {
+                border-bottom: 5px solid $blue;
+                .slick-list {
+                    width: 100%;
+                }
+                .no-transform {
+                    .slick-track {
+                        -webkit-transform: translate3d(0px, 0px, 0px) !important;
+                        transform: translate3d(0px, 0px, 0px) !important;
+                    }
+                }
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 1010px;
+                    margin: 0 auto;
+                    width: 100%;
+                    li {
+                        text-align: center;
+                        padding-bottom: 23px;
+                        @include bp(tabletsm) {
+                            padding-bottom: 15px;
+                        }
+                        &:focus {
+                            outline: none;
+                        }
+                        &.slick-current {
+                            span {
+                                font-weight: $bold;
+                                color: $blue;
+                                &:before {
+                                    content: "";
+                                    background-color: $blue;
+                                    height: rem-calc(8);
+                                    width: 100%;
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -24px;
+                                    opacity: 1;
+                                    @include bp(tabletsm) {
+                                        height: rem-calc(4);
+                                        bottom: -15px;
+                                    }
+                                }
+                            }
+                        }
+                        span {
+                            color: $gray;
+                            font-size: rem-calc(18);
+                            text-transform: uppercase;
+                            display: inline-block;
+                            vertical-align: middle;
+                            position: relative;
+                            font-family: $zeitung;
+                            font-weight: $normal;
+                            cursor: pointer;
+                            @include bp(tabletXl) {
+                                font-size: rem-calc(16);
+                            }
+                            @include bp(tabletsm) {
+                                font-size: rem-calc(14);
+                            }
+                            &:before {
+                                content: "";
+                                background-color: $blue;
+                                height: rem-calc(8);
+                                width: 100%;
+                                position: absolute;
+                                left: 0;
+                                bottom: -10px;
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+                .slick-prev {
+                    left: 0;
+                    z-index: 1;
+                    &:before {
+                        content: "";
+                        background-image: url(../images/slider-left-icon.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 1.125rem;
+                        height: 3rem;
+                        position: absolute;
+                        left: 0px;
+                        top: -15px;
+                        z-index: 1;
+                        opacity: 1;
+                        @include bp(tabletsm) {
+                            width: rem-calc(25);
+                            height: rem-calc(25);
+                            top: -5px;
+                        }
+                    }
+                }
+                .slick-next {
+                    right: 0;
+                    z-index: 1;
+                    &:before {
+                        content: "";
+                        background-image: url(../images/slider-right-icon.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 1.125rem;
+                        height: 3rem;
+                        position: absolute;
+                        left: 0px;
+                        top: -15px;
+                        z-index: 1;
+                        opacity: 1;
+                        @include bp(tabletsm) {
+                            width: rem-calc(25);
+                            height: rem-calc(25);
+                            top: -5px;
+                        }
+                    }
+                }
+            }
+            .labeled-carousel-slider {
+                position: relative;
+                .labeled-carousel-slider-wrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding: rem-calc(55 71px 0);
+                    @include bp(lg) {
+                        padding: rem-calc(20 40px 0);
+                    }
+                    @include bp(tabletsm) {
+                        padding: rem-calc(20 30px 0);
+                    }
+                    @include bp(sm) {
+                        padding: rem-calc(15 0 0);
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                    .labeled-carousel-slider-desc {
+                        width: 40%;
+                        padding: 17px 0 0 4px;
+                        @include bp(lg) {
+                            width: 42%;
+                        }
+                        @include bp(tabletsm) {
+                            width: 100%;
+                        }
+                        h3 {
+                            color: $blue;
+                            font-size: rem-calc(25);
+                            font-weight: $bold;
+                            letter-spacing: 0;
+                            margin: rem-calc(0 0 20 0);
+                        }
+                        ul {
+                            padding: rem-calc(0 0 20 20);
+                            li {
+                                color: $gray;
+                                font-size: rem-calc(20);
+                                margin: rem-calc(0 0 5 0);
+                                @include bp(tabletXl) {
+                                    font-size: rem-calc(18);
+                                }
+                                @include bp(tabletsm) {
+                                    font-size: rem-calc(16);
+                                }
+                                a {
+                                    color: #1362a2;
+                                } 
+                            }
+                        }
+                        a {
+                            border-color: #8dc63f;
+                            font-size: rem-calc(15);
+                            margin: rem-calc(20 0 0 0);
+                            padding: rem-calc(7 22);
+                            color: #8dc63f;
+                            @include bp(tabletsm) {
+                                margin: rem-calc(0 0 0 0);
+                            }
+                            &:hover {
+                                background-color: #8dc63f;
+                                color: $white;
+                                border-color: #8dc63f;
+                            }
+                        }
+                    }
+                    .labeled-carousel-slider-img {
+                        width: 60%;
+                        padding: rem-calc(0 15 0 52);
+                        @include bp(lg) {
+                            width: 58%;
+                        }
+                        @include bp(tabletXl) {
+                            padding: rem-calc(0 0 0 15);
+                        }
+                        @include bp(tabletsm) {
+                            width: 100%;
+                            padding: rem-calc(30 0 0 0);
+                        }
+                    }
+                }
+                .slick-prev {
+                    left: 0;
+                    z-index: 1;
+                    &:before {
+                        content: "";
+                        background-image: url(../images/slider-left-icon.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 1.125rem;
+                        height: 3rem;
+                        position: absolute;
+                        left: 0px;
+                        top: -15px;
+                        z-index: 1;
+                        opacity: 1;
+                    }
+                }
+                .slick-next {
+                    right: 0;
+                    z-index: 1;
+                    &:before {
+                        content: "";
+                        background-image: url(../images/slider-right-icon.svg);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 1.125rem;
+                        height: 3rem;
+                        position: absolute;
+                        left: 0px;
+                        top: -15px;
+                        z-index: 1;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

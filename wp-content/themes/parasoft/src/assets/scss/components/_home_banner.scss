@@ -1,0 +1,322 @@
+.home-banner {
+	min-height: rem-calc(670);
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	@include bp(lg) {
+		min-height: rem-calc(700);
+	}
+	@include bp(tabletXl) {
+		min-height: rem-calc(600);
+	}
+	@include bp(tabletmd) {
+		min-height: rem-calc(800);
+	}
+	@include bp(tabletsm) {
+		min-height: rem-calc(830);
+	}
+
+	&:before {
+		content: "";
+		background-color: rgba(21, 39, 55, 0.75);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&.videobg {
+		&:before {
+			display: none;
+		}
+	}
+
+	.home-banner-wrap {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		text-align: center;
+		top: 56.5%;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		z-index: 1;
+		@include bp(tabletsm) {
+			top: 52%;
+		}
+
+		.home-banner-cont-wrap {
+			max-width: rem-calc(1000);
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 0 0 25px;
+			@include bp(lg) {
+				padding: 0 0 0 0;
+			}
+
+			.home-banner-cont {
+				h1 {
+					font-size: rem-calc(60);
+					font-weight: $bold;
+					color: $white;
+					line-height: 1.15;
+					margin-bottom: rem-calc(30);
+					@include bp(xl) {
+						font-size: rem-calc(50);
+					}
+					@include bp(lg) {
+						font-size: rem-calc(40);
+					}
+					@include bp(tabletXl) {
+						font-size: rem-calc(38);
+					}
+					@include bp(tabletsm) {
+						font-size: rem-calc(36);
+					}
+
+					.wf-zeitung-active & {
+						@include bp(tabletsm) {
+							font-size: rem-calc(36);
+							line-height: 1.2;
+						}
+					}
+				}
+
+				p {
+					font-size: rem-calc(27);
+					letter-spacing: 0.3px;
+					font-weight: 500;
+					color: $white;
+					@include bp(lg) {
+						font-size: rem-calc(24);
+						line-height: 1.45;
+					}
+					@include bp(tabletsm) {
+						font-size: rem-calc(18);
+					}
+				}
+			}
+
+			.inner-banner-btn {
+				display: flex;
+				flex-wrap: wrap;
+
+				.btn-list {
+					min-width: 208px;
+					margin: 0 20px 0 0;
+					@include bp(lg) {
+						min-width: 200px;
+						margin: 0 15px 0 0;
+					}
+					@include bp(sm) {
+						min-width: 100%;
+						margin: 0 0 15px 0;
+					}
+
+					a {
+						width: 100%;
+						min-width: 100%;
+					}
+				}
+			}
+		}
+
+		.banner-right-column {
+			//background-image: url(../images/banner-left-pattern-new.svg);
+			//background-position: center center;
+			//background-repeat: no-repeat;
+			//background-size: cover;
+			border: 4px dotted #fff;
+			margin: 0 9%;
+			padding: rem-calc(46 22);
+			position: relative;
+			@include bp(xl) {
+				margin: 0 auto;
+				height: rem-calc(442px);
+				max-width: rem-calc(500px);
+			}
+			@include bp(xlm) {
+				padding: rem-calc(36 22);
+				margin: 0 rem-calc(20);
+
+			}
+			@include bp(lg) {
+				padding: rem-calc(32 22);
+				margin: 0;
+				height: rem-calc(398px);
+			}
+			@include bp(tabletmd) {
+				//padding: rem-calc(32 22);
+				margin: 60px 120px 0;
+			}
+			@include bp(tabletsm) {
+				//padding: rem-calc(32 22);
+				margin: rem-calc(60 30) 0;
+			}
+			@include bp(sm) {
+				padding: 0;
+				margin: rem-calc(30) auto 0;
+				//background-image: none;
+				border: none;
+			}
+
+			h2 {
+				color: $white;
+				font-size: 35px;
+				font-family: $zeitung;
+				font-weight: $bold;
+				@include bp(lg) {
+					font-size: rem-calc(30);
+				}
+				@include bp(sm) {
+					font-size: rem-calc(24);
+				}
+			}
+
+			.rotated-square {
+				//background-image: url(../images/Question_Diagram_inactive.svg);
+				//background-position: center center;
+				//background-repeat: no-repeat;
+				//background-size: cover;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				width: auto;
+				height: 169px;
+				margin: 0 auto;
+				align-items: center;
+				justify-content: center;
+				@include bp(xl) {
+					margin: 0 auto;
+					height: 162px;
+				}
+				@include bp(lg) {
+					margin: 0 auto;
+					height: 143px;
+				}
+				@include bp(sm) {
+					height: rem-calc(140px);
+					margin: 0 auto rem-calc(15px);
+
+					#svg-rotated-square {
+						.corner {
+							display: none;
+						}
+					}
+				}
+
+				#svg-rotated-square {
+					width: 100%;
+				}
+
+				&.blue-btn-hover {
+					//background-image: url(../images/Question_Diagram_left_hover.svg);
+					#svg-rotated-square {
+						.corner.left {
+							stroke:#fff;
+							stroke-width:6;
+							stroke-miterlimit:10;
+						}
+					}
+				}
+
+				&.green-btn-hover {
+					//background-image: url(../images/Question_Diagram_right_hover.svg);
+					#svg-rotated-square {
+						.corner.right {
+							stroke:#fff;
+							stroke-width:6;
+							stroke-miterlimit:10;
+						}
+					}
+				}
+
+				/*&:before {
+					content: "";
+					background-image: url(../images/left-right-split-corners.svg);
+					width: 420px;
+					height: 100px;
+					background-position: top center;
+					background-repeat: no-repeat;
+					position: absolute;
+					left: 0;
+					bottom: 100px;
+					right: 0;
+					margin: 0 auto;
+					background-size: cover;
+					z-index: -1;
+					@include bp(lg) {
+						width: 360px;
+						height: 87px;
+						bottom: 83px;
+					}
+					@include bp(sm) {
+					   display: none;
+					}
+				}*/
+				span {
+					vertical-align: middle;
+					font-size: 61px;
+					line-height: normal;
+					font-family: $Lato;
+					font-weight: $blackwht;
+					display: none;
+					@include bp(sm) {
+						font-size: 30px;
+					}
+				}
+			}
+
+			.banner-right-btn {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					margin-top: -9px;
+				}
+
+				.banner-btn {
+					margin: 0 20px 0 0;
+					@include bp(xl) {
+						margin: 0 15px 0 0;
+					}
+					@include bp(lg) {
+						margin: 0 10px 0 0;
+					}
+					@include bp(sm) {
+						margin: 0;
+						width: 100%;
+					}
+
+					&:last-child {
+						margin: 0;
+					}
+
+					a {
+						font-size: rem-calc(17);
+						padding: 10px 18px;
+						font-weight: $bold;
+						@include bp(xl) {
+							font-size: rem-calc(16);
+						}
+						@include bp(lg) {
+							font-size: rem-calc(15);
+							padding: 10px 13px;
+						}
+						@include bp(sm) {
+							margin: 0 0 15px 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
