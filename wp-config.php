@@ -1,79 +1,90 @@
 <?php
-define( 'WP_CACHE', true ); // Added by WP Rocket
-
 /**
- * The base configuration for WordPress
+ * Pantheon platform settings.
  *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
+ * IMPORTANT NOTE:
+ * Do not modify this file. This file is maintained by Pantheon.
  *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * ABSPATH
- *
- * @link https://wordpress.org/support/article/editing-wp-config-php/
- *
- * @package WordPress
+ * Site-specific modifications belong in wp-config.php, not this file. This
+ * file may change in future releases and modifications would cause conflicts
+ * when attempting to apply upstream updates.
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
+// ** MySQL settings - included in the Pantheon Environment ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'local' );
+define('DB_NAME', $_ENV['DB_NAME']);
 
 /** MySQL database username */
-define( 'DB_USER', 'root' );
+define('DB_USER', $_ENV['DB_USER']);
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'root' );
+define('DB_PASSWORD', $_ENV['DB_PASSWORD']);
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+/** MySQL hostname; on Pantheon this includes a specific port number. */
+define('DB_HOST', $_ENV['DB_HOST'] . ':' . $_ENV['DB_PORT']);
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+define('DB_CHARSET', 'utf8mb4');
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define('DB_COLLATE', '');
 
-/**
+/**#@+
  * Authentication Unique Keys and Salts.
  *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * Changing these will force all users to have to log in again.
+ * Pantheon sets these values for you. If you want to shuffle them you must
+ * contact support: https://pantheon.io/docs/getting-support
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'selQ0tNU0p4aA+VxBdX6GiaWqQxXs1nEQg/5ueCx+1JG8zqQHlxAqDEYG482avJSTtIQ9GR2frZ4eayUFIuboA==');
-define('SECURE_AUTH_KEY',  'QKofTug9W1YcmegNY+i5BBS0538b3EU306f0EH2YmhRqbCJcbvc68DNA7lw3ATwiSWc8sIxlf0sc8frkaZzmNg==');
-define('LOGGED_IN_KEY',    'F3DnhGPNayQn903cReFHmFLqxCed5TN1MSnYA02kjJTWnQPHEA9W448NavWRIwhRRb2d+LRpEic+/stCgHp6fA==');
-define('NONCE_KEY',        'dkCPdYkvkOlvIg0OhunADQHMgt7QyfRrVjEIaPtmREb50qbntkEVDfuBBDzjTdlK705+LxabrBrmINYjsWa0Fw==');
-define('AUTH_SALT',        'GXw/plNqs+xPYWvnsEqXfchdNMXXQ9AnuyxIrfEFQDj9Vww7fUGzb7E7XXsVjdld0iWS7MzrwCl+pKKK3nJaFQ==');
-define('SECURE_AUTH_SALT', '1cj+qLPZfhpGRpfLGEZgfZ1oylibqiQ8/u/iRL4QY2yUzn4kUiShU9TsMTlPq4cCrMYcpehUjLs7haJQAKeYPw==');
-define('LOGGED_IN_SALT',   'V+D1MZfsbiNiUSTPFDgWx8ila20UpuKIfK/tJNTdsYQkqu44l/H0Fw0KjJkR9G3oZLp9QLryB/bJEzr+PvhMeg==');
-define('NONCE_SALT',       'aOcL6EuHtRMAhi2/eHp4ll7us2IrFKlMM+OlGwU+J1NDESnTkFQOapEvT6YHLd4MUKiNlrC+Wydz3h+AdecmGQ==');
+define('AUTH_KEY', $_ENV['AUTH_KEY']);
+define('SECURE_AUTH_KEY', $_ENV['SECURE_AUTH_KEY']);
+define('LOGGED_IN_KEY', $_ENV['LOGGED_IN_KEY']);
+define('NONCE_KEY', $_ENV['NONCE_KEY']);
+define('AUTH_SALT', $_ENV['AUTH_SALT']);
+define('SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT']);
+define('LOGGED_IN_SALT', $_ENV['LOGGED_IN_SALT']);
+define('NONCE_SALT', $_ENV['NONCE_SALT']);
+/**#@-*/
 
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix = 'wp_';
+/** A couple extra tweaks to help things run well on Pantheon. **/
+if (isset($_SERVER['HTTP_HOST'])) {
+    // HTTP is still the default scheme for now.
+    $scheme = 'http';
+    // If we have detected that the end use is HTTPS, make sure we pass that
+    // through here, so <img> tags and the like don't generate mixed-mode
+    // content warnings.
+    if (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON') {
+        $scheme = 'https';
+        $_SERVER['HTTPS'] = 'on';
+    }
+    define('WP_HOME', $scheme . '://' . $_SERVER['HTTP_HOST']);
+    define('WP_SITEURL', $scheme . '://' . $_SERVER['HTTP_HOST']);
+}
+// Don't show deprecations; useful under PHP 5.5
+error_reporting(E_ALL ^ E_DEPRECATED);
+/** Define appropriate location for default tmp directory on Pantheon */
+define('WP_TEMP_DIR', sys_get_temp_dir());
 
-
-
-
-/* That's all, stop editing! Happy publishing. */
-
-/** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+// FS writes aren't permitted in test or live, so we should let WordPress know to disable relevant UI
+if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array( 'test', 'live' )) && ! defined('DISALLOW_FILE_MODS')) {
+    define('DISALLOW_FILE_MODS', true);
 }
 
-/** Sets up WordPress vars and included files. */
-require_once ABSPATH . 'wp-settings.php';
+/**
+ * Set WP_ENVIRONMENT_TYPE according to the Pantheon Environment
+ */
+if (getenv('WP_ENVIRONMENT_TYPE') === false) {
+    switch ($_ENV['PANTHEON_ENVIRONMENT']) {
+        case 'live':
+            putenv('WP_ENVIRONMENT_TYPE=production');
+            break;
+        case 'test':
+            putenv('WP_ENVIRONMENT_TYPE=staging');
+            break;
+        default:
+            putenv('WP_ENVIRONMENT_TYPE=development');
+            break;
+    }
+}
