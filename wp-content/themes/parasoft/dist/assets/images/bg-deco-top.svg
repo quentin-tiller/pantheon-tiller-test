@@ -1,1 +1,11 @@
-<svg width="308" height="539" xmlns="http://www.w3.org/2000/svg"><path d="M-3.303 544.275l311.186-544H-3.303z" fill="#0A93D2" fill-rule="evenodd" opacity=".05"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="308px" height="539px" viewBox="0 0 308 539" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path 3</title>
+    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.05">
+        <g id="Solutions-Page-UI-" transform="translate(0.000000, -2594.000000)" fill="#0A93D2">
+            <g id="Group-19-Copy" transform="translate(-3.303260, 2594.275000)">
+                <polygon id="Path-3" points="0 544 311.186441 0 0 0"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
