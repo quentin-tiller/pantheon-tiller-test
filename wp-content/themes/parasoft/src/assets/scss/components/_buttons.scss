@@ -1,0 +1,122 @@
+/*Button Start*/
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: rem-calc(19);
+	line-height: 1.5;
+	font-weight: $bold;
+	font-family: $zeitung;
+	border-radius: 50px;
+	border: 1px solid transparent;
+	text-transform: uppercase;
+	padding: rem-calc(11 34);
+	@include bp(tabletmd) {
+		font-size: rem-calc(16);
+	}
+	@include bp(tabletsm) {
+		font-size: rem-calc(14);
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+		text-decoration: none;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.white-transparant-btn {
+    border-color: $white;
+    color: $white;
+    &:hover {
+        background-color: $white;
+        border-color: $white;
+        color: $dark-red;
+    }
+}
+
+.parrot-green-light {
+	background-color: $parrot-green-light;
+	color: $white;
+}
+
+.green-btn {
+	background-color: $parrot-green;
+	color: $white;
+	border-color: $parrot-green;
+
+	&:hover {
+		border-color: $parrot-green;
+		color: $parrot-green;
+	}
+}
+
+.navy-btn {
+	background-color: $dark-navy-blue;
+	color: $white;
+	border-color: $dark-navy-blue;
+
+	&:hover {
+		border-color: $dark-navy-blue;
+		color: $dark-navy-blue;
+	}
+}
+
+.black-btn {
+	background-color: $black;
+	color: $white;
+	border-color: $black;
+
+	&:hover {
+		border-color: $black;
+		color: $black;
+	}
+}
+
+.white-btn {
+	background-color: $white;
+	color: $black;
+	border-color: $white;
+
+	&:hover {
+		border-color: $white;
+		color: $white;
+	}
+}
+
+.gray-btn {
+	background-color: transparent;
+	border-color: $light-silver;
+	color: $light-silver;
+
+	&:hover {
+		background-color: $light-silver;
+		color: $white;
+	}
+}
+
+.blue-btn {
+	background-color: $blue;
+	color: $white;
+
+	&:hover {
+		border-color: $blue;
+		background-color: transparent;
+		color: $blue;
+	}
+}
+
+.red-btn {
+	background-color: $dark-red;
+	color: $white;
+	border-color: $dark-red;
+
+	&:hover {
+		border-color: $dark-red;
+		background-color: transparent;
+		color: $dark-red;
+	}
+}

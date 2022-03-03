@@ -1,0 +1,569 @@
+@import 'util/util';
+
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
+$body-font-color: $black;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 0;
+
+
+$grid-row-width: 100%;
+
+
+// 50. Table
+// ---------
+
+$table-background: $white;
+$table-color-scale: 5%;
+$table-border: 1px solid smart-scale($table-background, $table-color-scale);
+$table-padding: rem-calc(8 10 10);
+$table-hover-scale: 2%;
+$table-row-hover: darken($table-background, $table-hover-scale);
+$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
+$table-is-striped: true;
+$table-striped-background: smart-scale($table-background, $table-color-scale);
+$table-stripe: even;
+$table-head-background: smart-scale($table-background, $table-color-scale / 2);
+$table-head-row-hover: darken($table-head-background, $table-hover-scale);
+$table-foot-background: smart-scale($table-background, $table-color-scale);
+$table-foot-row-hover: darken($table-foot-background, $table-hover-scale);
+$table-head-font-color: $body-font-color;
+$table-foot-font-color: $body-font-color;
+$show-header-for-stacked: false;
+$table-stack-breakpoint: medium;
+// 55. Top Bar
+// -----------
+
+$topbar-padding: 0.5rem;
+$topbar-background: $light-gray;
+$topbar-submenu-background: $topbar-background;
+$topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
+$topbar-input-width: 200px;
+$topbar-unstack-breakpoint: medium;
+
+
+$navGray: #152737;
+$dark-nav-color: #2C3840;
+
+
+$breakpoints2: (
+  "small": 768px,
+  "medium": 992px,
+  "large": 1200px,
+) !default;
+
+// Need to add scale mixing so we can scale font-size, font-weight, margin, padding etc...
+
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints2, $breakpoint) {
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints2, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints2)}.";
+  }
+}
+
+
+
+
+
+/*************************
+Font Family
+*/
+
+$Lato: 'Lato', sans-serif;
+$zeitung: zeitung, sans-serif;
+$Poppins: 'Poppins', sans-serif;
+$proximanova: proxima-nova, sans-serif;
+$Wingdings3: 'Wingdings 3';
+$Muli: 'Muli', sans-serif;
+
+
+/* ----- Font weight ------- */
+$thin: 200;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$mediumdark: 600;
+$bold: 700;
+$heavy: 800;
+$blackwht: 900;
+
+
+/* ------------------ */
+
+/* Color */
+
+$white: #fff;
+$black: #000;
+$dark-black: #231F20;
+
+$blue: #0E93D2;
+$dark-navy-blue: #004877;
+$light-navy-blue: #00385F;
+$dark-blue: #152737;
+
+$gray: #54565A;
+$lightGray: #f3f3f3;
+$dark-red: #FF4A3C;
+
+$silver: #A2A9AD;
+$light-silver: #7C878D;
+
+$parrot-green: #8AD32F;
+$parrot-green-light: #8EC73F;
+
+
+/*fonts face*/
+
+.container {
+	@include bp(xlmin) {
+		max-width: rem-calc(1332);
+	}
+}
+
+@media all and (-ms-high-contrast: none) {
+    .videobg_child {
+        height: auto !important;
+	    video {
+		    height: auto !important;
+	    }
+    }
+	.image-cards-block .cards-block-bg {
+		&:after {
+			content: "";
+			opacity: 0.6;
+		}
+
+		&:before {
+			content: "";
+			background-color: rgba(253, 185, 19, 0.5);
+			opacity: 1;
+		}
+	}
+}
+
+body {
+    &.fr {
+        #mega-menu-wrap-max_mega_menu_1 {
+            #mega-menu-max_mega_menu_1 {
+                li {
+                    &.mega-menu-item {
+                        a {
+                            &.mega-menu-link {
+                                font-size: 14px;
+                                @include bp(xl) {
+                                    font-size: 12px!important;
+                                }
+                                @include bp(lg) {
+                                    font-size: 10px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .home-banner {
+            .home-banner-wrap {
+                .banner-right-column {
+                    .banner-right-btn {
+                        .banner-btn {
+                            a {
+                                font-size: 14px;
+                                @include bp(xl) {
+                                    font-size: 12px;
+                                    @include bp(lg) {
+                                        font-size: 11px!important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contact-fixed {
+            top: rem-calc(250)!important;
+            right: -92px;
+        }
+        .blog {
+            .resources-form {
+                .resources-search {
+                    form {
+                        ul {
+                            li {
+                                &.sf-field-search {
+                                    max-width: 320px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .solutions-testing-sec {
+            .solutions-list {
+                .solutions-testing-list {
+                    ul {
+                        li {
+                            a {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.de {
+        #mega-menu-wrap-max_mega_menu_1 {
+            #mega-menu-max_mega_menu_1 {
+                li {
+                    &.mega-menu-item {
+                        a {
+                            &.mega-menu-link {
+                                font-size: 14px;
+                                @include bp(xl) {
+                                    font-size: 12px!important;
+                                }
+                                @include bp(lg) {
+                                    font-size: 10px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .home-banner {
+            .home-banner-wrap {
+                .banner-right-column {
+                    .banner-right-btn {
+                        .banner-btn {
+                            a {
+                                font-size: 12px;
+                                @include bp(lg) {
+                                    font-size: 11px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contact-fixed {
+            top: rem-calc(270)!important;
+            right: -126px;
+        }
+        .blog {
+            .resources-form {
+                .resources-search {
+                    form {
+                        ul {
+                            li {
+                                &.sf-field-search {
+                                    max-width: 325px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .solutions-testing-sec {
+            .solutions-list {
+                .solutions-testing-list {
+                    ul {
+                        li {
+                            a {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.es {
+        #mega-menu-wrap-max_mega_menu_1 {
+            #mega-menu-max_mega_menu_1 {
+                li {
+                    &.mega-menu-item {
+                        a {
+                            &.mega-menu-link {
+                                font-size: 14px;
+                                @include bp(xl) {
+                                    font-size: 12px!important;
+                                }
+                                @include bp(lg) {
+                                    font-size: 10px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .home-banner {
+            .home-banner-wrap {
+                .banner-right-column {
+                    .banner-right-btn {
+                        .banner-btn {
+                            a {
+                                font-size: 12px;
+                                @include bp(lg) {
+                                    font-size: 11px!important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contact-fixed {
+            top: rem-calc(240)!important;
+            right: -90px;
+        }
+        .solutions-testing-sec {
+            .solutions-list {
+                .solutions-testing-list {
+                    ul {
+                        li {
+                            a {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+_:-ms-lang(x), .videobg_child video {
+	height: auto !important;
+}
+
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+
+	> .col,
+	> [class*="col-"] {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+body {
+	font-size: rem-calc(20);
+	line-height: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	font-weight: $normal;
+	color: $white;
+	font-family: $Lato;
+
+	@include bp(tabletmd) {
+		font-size: rem-calc(18);
+	}
+	@include bp(sm) {
+		font-size: rem-calc(16);
+	}
+}
+
+a {
+	text-decoration: none;
+	@include transition(0.5s, all, ease-in-out);
+	color: $blue;
+
+	&:hover, &:focus {
+		background: none;
+		text-decoration: none;
+		box-shadow: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:active {
+		outline: none;
+	}
+}
+
+p {
+	font-size: rem-calc(20);
+	line-height: 1.45;
+	margin-bottom: rem-calc(20);
+	color: $gray;
+	@include bp(tabletXl) {
+		font-size: rem-calc(18);
+		line-height: 1.5;
+		margin-bottom: rem-calc(15);
+	}
+	@include bp(tabletsm) {
+		font-size: rem-calc(16);
+		margin-bottom: rem-calc(10);
+	}
+
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+
+	li {
+
+	}
+}
+
+br {
+	@include bp(xlthr) {
+		display: none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: $bold;
+}
+
+h1 {
+	font-family: $zeitung;
+	font-weight: $bold;
+	font-size: rem-calc(38);
+	line-height: 1.2;
+	color: $white;
+	letter-spacing: -0.3px;
+	margin-bottom: rem-calc(18);
+	@include bp(lg) {
+		font-size: rem-calc(36);
+		letter-spacing: 0;
+	}
+	@include bp(tabletXl) {
+		font-size: rem-calc(32);
+	}
+	@include bp(tabletsm) {
+		font-size: rem-calc(26);
+	}
+}
+
+h2 {
+	font-family: $zeitung;
+	font-weight: $bold;
+	color: $dark-navy-blue;
+	font-size: rem-calc(36);
+	line-height: 1.2;
+	letter-spacing: -0.3px;
+	margin-bottom: rem-calc(18);
+	@include bp(lg) {
+		font-size: rem-calc(30);
+	}
+	@include bp(tabletXl) {
+		font-size: rem-calc(28);
+	}
+	@include bp(tabletsm) {
+		font-size: rem-calc(26);
+	}
+}
+
+h3 {
+	font-family: $zeitung;
+	font-weight: $bold;
+	color: $dark-navy-blue;
+	font-size: rem-calc(24);
+	line-height: 1.2;
+	letter-spacing: -0.3px;
+	margin-bottom: rem-calc(18);
+}
+
+h4 {
+	font-family: $zeitung;
+	font-weight: $bold;
+	color: $blue;
+	font-size: rem-calc(24);
+	line-height: 1.2;
+	margin-bottom: rem-calc(18);
+}
+
+h5 {
+	font-family: $zeitung;
+	font-weight: $bold;
+	color: $dark-navy-blue;
+	font-size: rem-calc(22);
+	line-height: 1.2;
+	margin-bottom: rem-calc(18);
+}
+
+h6 {
+	font-family: $zeitung;
+	font-weight: $bold;
+	color: $dark-navy-blue;
+	font-size: rem-calc(20);
+	line-height: 1.2;
+	margin-bottom: rem-calc(18);
+}
+
+
+.pb-0 {
+	padding-bottom: 0 !important;
+}
+
+.pt-0 {
+	padding-top: 0 !important;
+}
+
+
+
+
+/*Animation Start*/
+.bottom-top {
+	-webkit-transition: 1s top ease, 1s opacity ease;
+	-moz-transition: 1s all ease, 1s opacity ease;
+	-ms-transition: 1s all ease, 1s opacity ease;
+	transition: 1s all ease, 1s opacity ease;
+	bottom: 100px;
+	opacity: 0;
+	position: relative;
+}
+
+.bottom-top.onView {
+	bottom: 0;
+	opacity: 1;
+}
+
+.bottom-up {
+	-webkit-transition: 1s top ease, 1s opacity ease;
+	-moz-transition: 1s all ease, 1s opacity ease;
+	-ms-transition: 1s all ease, 1s opacity ease;
+	transition: 1s all ease, 1s opacity ease;
+	top: 100px;
+	opacity: 0;
+	position: relative;
+}
+
+.bottom-up.onView {
+	top: 0;
+	opacity: 1;
+}

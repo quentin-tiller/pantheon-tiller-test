@@ -1,0 +1,81 @@
+.employees-testimonials-carousel-block {
+    position: relative;
+    padding: rem-calc(110 0 55);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    h2 {
+        font-size: rem-calc(24);
+        text-transform: uppercase;
+        color: $blue;
+        margin-bottom: rem-calc(30);
+        text-align: center;
+        @include bp(tabletXl) {
+            margin-bottom: rem-calc(20);
+            font-size: rem-calc(22);
+        }
+        @include bp(tabletmd) {
+            margin-bottom: rem-calc(15);
+        }
+    }
+    .employees-testimonials-wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        width: 100%;
+        .employees-testimonials-slider {
+            text-align: center;
+            &:focus {
+                outline: none;
+            }
+            h2 {
+                font-size: rem-calc(24);
+                text-transform: uppercase;
+                color: $blue;
+                margin-bottom: rem-calc(30);
+                @include bp(tabletXl) {
+                    margin-bottom: rem-calc(20);
+                    font-size: rem-calc(22);
+                }
+                @include bp(tabletmd) {
+                    margin-bottom: rem-calc(15);
+                }
+            }
+            blockquote {
+                font-size: rem-calc(30);
+                font-family: $Lato;
+                font-weight: $normal;
+                color: $gray;
+                padding: 0;
+                margin: rem-calc(0 0 40 0);
+                border: 0;
+                font-style: normal;
+                &:focus {
+                    outline: none;
+                }
+                @include bp(tabletXl) {
+                    font-size: rem-calc(24);
+                    margin: rem-calc(0 0 20 0);
+                }
+                @include bp(tabletmd) {
+                    font-size: rem-calc(22);
+                }
+                @include bp(tabletsm) {
+                    font-size: rem-calc(20);
+                }
+            }
+            p {
+                font-size: rem-calc(22);
+                color: $blue;
+                @include bp(tabletXl) {
+                    font-size: rem-calc(20);
+                }
+                @include bp(tabletmd) {
+                    font-size: rem-calc(18);
+                }
+            }
+        }
+    }
+}

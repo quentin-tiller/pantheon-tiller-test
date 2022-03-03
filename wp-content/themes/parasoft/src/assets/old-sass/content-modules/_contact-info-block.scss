@@ -1,0 +1,101 @@
+.contact-info-block {
+    position: relative;
+    padding: rem-calc(65 0 22);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 20);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 30);
+    }
+    .contact-address {
+        padding: rem-calc(40 0 0 49);
+        @include bp(xlthr) {
+            padding: rem-calc(20 0 0 20);
+        }
+        @include bp(tabletmd) {
+            padding: rem-calc(0);
+        }
+        @include bp(tabletsm) {
+            margin: rem-calc(0 0 30 0);
+        }
+        h6 {
+            color: $light-navy-blue;
+            font-size: rem-calc(22);
+            text-transform: uppercase;
+            font-weight: $bold;
+        }
+        p {
+            font-size: rem-calc(18);
+            line-height: rem-calc(31);
+            @include bp(tabletmd) {
+                font-size: rem-calc(16); 
+            }
+        }
+    }
+    .contact-number {
+        padding: rem-calc(40 0 0 50);
+        @include bp(xlthr) {
+            padding: rem-calc(20 0 0 20);
+        }
+        @include bp(tabletmd) {
+            padding: rem-calc(0);
+        }
+        @include bp(tabletsm) {
+            margin: rem-calc(0 0 30 0);
+        }
+        h6 {
+            color: $light-navy-blue;
+            font-size: rem-calc(22);
+            text-transform: uppercase;
+            font-weight: $bold;
+        }
+        p {
+            font-size: rem-calc(18); 
+            line-height: rem-calc(30);
+            margin: 0;
+            @include bp(tabletmd) {
+                font-size: rem-calc(16); 
+            }
+            a {
+                color: $gray;
+                &:hover {
+                    color: $dark-navy-blue; 
+                }
+            }
+        }
+    }
+    .contact-info-sec {
+        margin: rem-calc(0 98 0 23);
+        @include bp(xlthr) {
+            margin: rem-calc(0 30 0 20);
+        }
+        @include bp(tabletmd) {
+            margin: rem-calc(0);
+        }
+        .contact-info-list {
+            margin: rem-calc(0 0 21 0);
+            a {
+                border: 1px solid #7d858c;
+                padding: rem-calc(10 30);
+                border-radius: 50px;
+                display: inline-block;
+                vertical-align: top;
+                font-size: 19px;
+                color: #7d858c;
+                font-weight: 700;
+                font-family: $zeitung;
+                width: 100%;
+                text-align: center;
+                background-color: transparent;
+                @include bp(tabletmd) {
+                    font-size: rem-calc(16); 
+                    padding: rem-calc(10 20);
+                }
+                &:hover {
+                    background-color: #7d858c;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

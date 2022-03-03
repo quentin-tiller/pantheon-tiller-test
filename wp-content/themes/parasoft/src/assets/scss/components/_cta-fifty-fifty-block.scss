@@ -1,0 +1,92 @@
+.cta-fifty-fifty-block {
+    position: relative;
+    padding: rem-calc(110 0 84);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    &:before {
+        content: "";
+        background-image: url(../images/products-block-top-shape.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        max-width: 1119px;
+        height: 100%;
+        width: 100%;
+    }
+    .cta-fifty-fifty-top-shape {
+        &:before {
+            content: "";
+            width: 114px;
+            height: 114px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+            clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+            background-color: inherit;
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+    }
+    .cta-fifty-fifty-lt-cont {
+        padding: rem-calc(5 74 0 45);
+        @include bp(lg) {
+            padding: rem-calc(0);
+        }
+        h3 {
+            color: $white;
+            margin: rem-calc(0 0 7 0);
+        }
+        p {
+            color: $white;
+        }
+    }
+    .cta-fifty-fifty-rt-cont {
+        padding: rem-calc(0 75 0 45);
+        @include bp(lg) {
+            padding: rem-calc(0);
+        }
+        @include bp(tabletsm) {
+            padding: rem-calc(20 0 0 0);
+        }
+        h2 {
+            font-size: rem-calc(43);
+            letter-spacing: 0;
+            margin-bottom: rem-calc(18);
+            color: $white;
+            @include bp(lg) {
+                font-size: rem-calc(32);
+            }
+            @include bp(tabletXl) {
+                margin-bottom: rem-calc(12);
+                font-size: rem-calc(28);
+            }
+            @include bp(tabletmd) {
+                font-size: rem-calc(24);
+            }
+        }
+        p {
+            color: $white;
+            font-size: rem-calc(23);
+            margin: rem-calc(0 0 40 0);
+            @include bp(tabletXl) {
+                font-size: rem-calc(18);
+                margin: rem-calc(0 0 20 0);
+            }
+            @include bp(tabletsm) {
+                font-size: rem-calc(16);
+            }
+        }
+        .btn {
+            padding: rem-calc(11 22);
+        }
+    }
+}

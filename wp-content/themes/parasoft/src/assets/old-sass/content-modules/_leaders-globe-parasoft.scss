@@ -1,0 +1,313 @@
+.leaders-globe-parasoft {
+    position: relative;
+    padding: 86px 0 0;
+    overflow: hidden;
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 0);
+    }
+    .heading {
+        margin: 0 0 58px 0;
+        @include bp(tabletsm) {
+            margin: 0 0 20px 0;
+            padding: 0 15px;
+        }
+        h2 {
+            font-weight: $bold;
+            font-size: rem-calc(38);
+            @include bp(lg) {
+                font-size: rem-calc(30);
+            }
+            @include bp(tabletXl) {
+                font-size: rem-calc(28);
+            }
+            @include bp(tabletsm) {
+                font-size: rem-calc(26);
+            }
+        }
+    }
+    .container-fluid {
+        padding: 0;
+    }
+    .leaders-globe-parasoft-slider {
+        .globe-category-slider {
+            max-width: 1200px;
+            margin: 0 auto 65px;
+            width: 100%;
+            padding: 0 20px;
+            @include bp(lg) {
+                margin: 0 auto 35px;
+            }
+            &.no-transform {
+                .slick-list {
+                    .slick-track {
+                        -webkit-transform: translate3d(0px, 0px, 0px) !important;
+                        transform: translate3d(0px, 0px, 0px) !important;
+                    }
+                }
+            }
+            .globe-slider-list {
+                margin: rem-calc(0 50 0 0);
+                text-align: center;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:focus {
+                    outline: none;        
+                }
+                @include bp(lg) {
+                    margin: rem-calc(0 20);
+                }
+                @include bp(tabletsm) {
+                    margin: rem-calc(0 10);
+                }
+                &.slick-current {
+                    span { 
+                        color: $parrot-green;
+                        border-bottom: 4px solid $parrot-green;
+                    }
+                }
+                span {
+                    font-size: rem-calc(24);
+                    line-height: normal;
+                    color: $blue;
+                    font-family: $zeitung;
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: $blue;
+                    cursor: pointer;
+                    text-align: center;
+                    font-weight: $bold;
+                    @include bp(xlthr) {
+                        font-size: rem-calc(22);
+                    }
+                    @include bp(lg) {
+                        font-size: rem-calc(20);
+                    }
+                    &:hover {
+                        color: $parrot-green;
+                        border-bottom: 4px solid $parrot-green;
+                    }
+                }
+            }
+        }
+        .globe-slider {
+            &:before {
+                content: "";
+                background-color: $white;
+                width: calc(50% + 25px);
+                height: 25px;
+                position: absolute;
+                right: 50%;
+                bottom: 0;
+                z-index: 1;
+                transform: skewX(40deg);
+                transform-origin: left bottom;
+            }
+            &:after {
+                content: "";
+                background-color: $white;
+                width: calc(50% + 25px);
+                height: 25px;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                z-index: 1;
+                transform: skewX(-40deg);
+                transform-origin: right bottom;
+            }
+            .slick-prev {
+                left: 50px;
+                z-index: 1;
+                @include bp(xlthr) {
+                    left: 10px;
+                }
+                @include bp(tabletsm) {
+                    left: 8px;
+                }
+                &:before {
+                    content: "";
+                    background-image: url(../images/slider-left-icon.svg);
+                    width: 17px;
+                    height: 48px;
+                    opacity: 1;
+                    position: absolute;
+                    left: 0;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            .slick-next {
+                right: 50px;
+                @include bp(xlthr) {
+                    right: 10px;
+                }
+                @include bp(tabletsm) {
+                    right: 8px;
+                }
+                &:before {
+                    content: "";
+                    background-image: url(../images/slider-right-icon.svg);
+                    width: 17px;
+                    height: 48px;
+                    opacity: 1;
+                    position: absolute;
+                    right: 0;
+                    right: 0;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+            .globe-slider-list {
+                .globe-slider-bg {
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    padding: 0 0 70px 0;
+                    position: relative;
+                    min-height: 650px;
+                    @include bp(tabletsm) {
+                        min-height: 550px;
+                    }
+                    &:before {
+                        content: "";
+                        background-color: rgba(21,39,55,0.8);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                    .globe-slider-cont {
+                        max-width: 1142px;
+                        margin: 0 auto;
+                        width: 100%;
+                        position: relative;
+                        z-index: 1;
+                        padding: 0 15px;
+                        @include bp(xlthr) {
+                            padding: 0 50px;    
+                        }
+                        @include bp(tabletsm) {
+                            padding: 0 35px;
+                        }
+                        .logo {
+                            margin: 0 0 48px 0;
+                            padding: 4px 0;
+                            background-color: #fff;
+                            max-width: 318px;
+                            width: 100%;
+                            @include bp(tabletmd) {
+                                max-width: 230px;
+                            }
+                            @include bp(tabletsm) {
+                                max-width: 200px;
+                            }
+                            img {
+                                margin: 0 auto;
+                                @include bp(tabletmd) {
+                                    max-width: 80%;
+                                }
+                            }
+                        }
+                        p {
+                            color: $white;
+                            font-size: 27px;
+                            font-family: $Lato;
+                            font-weight: $normal;
+                            max-width: 580px;
+                            width: 100%;
+                            line-height: 1.55;
+                            letter-spacing: 0.1px;
+                            @include bp(tabletsm) {
+                                font-size: 18px;
+                            }
+                        }
+                        span {
+                            color: $white;
+                            font-size: 27px;
+                            font-family: $Lato;
+                            font-weight: $normal;
+                            display: block;
+                            margin: 0 0 46px 0;
+                            @include bp(tabletsm) {
+                                font-size: 18px;
+                            }
+                        }
+                        a {
+                            font-size: rem-calc(16);
+                            font-weight: $bold;;
+                            text-transform: uppercase;
+                            color: $white;
+                            background-color: $blue;
+                            border: 1px solid $blue;
+                            padding: 10px 39px;
+                            border-radius: 50px;
+                            margin: 0 0 0 9px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            &:hover {
+                                background-color: transparent;
+                                border-color: $blue;
+                            }
+                            @include bp(tabletsm) {
+                                font-size: 14px;
+                                margin: 0;
+                                padding: 10px 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .slider-logo-wrap {
+            max-width: 100%;
+            margin: 0 auto 0;
+            width: 100%;
+            padding: 12px 30px 0;
+            background-color: $white;
+            @include bp(lg) {
+                padding: 15px 20px;
+            }
+            .slider-logo-main {
+                .slider-logo {
+                    display: table;
+                    @include bp(tabletXl) {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .slider-logo-list {
+                        display: table-cell;
+                        width: 1%;
+                        height: 100%;
+                        vertical-align: middle;
+                        img {
+                            margin: 0 auto;
+                        }
+                        @include bp(tabletXl) {
+                            width: 25%;
+                            display: inline-block;
+                            vertical-align: top;
+                            padding: 0 15px 15px;
+                        }
+                        @include bp(tabletsm) {
+                            width: 50%;
+                            padding: 0 10px 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .leaders-globe-parasoft-btn {
+        margin: rem-calc(0 0 0 0);
+        background-color: $white;
+        padding: 35px 0 39px;
+        @include bp(tabletsm) {
+            padding: 20px 0;
+        }
+    }
+}

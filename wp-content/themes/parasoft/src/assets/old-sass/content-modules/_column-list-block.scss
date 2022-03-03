@@ -1,0 +1,141 @@
+.column-list-block {
+    position: relative;
+    padding: rem-calc(114 0 95);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    &.products-column-list-block {
+        padding: rem-calc(84 0 95);
+        @include bp(tabletXl) {
+            padding: rem-calc(60 0 60);
+        }
+        @include bp(tabletsm) {
+            padding: rem-calc(40 0 40);
+        }
+        .column-block-list {
+            .column-list-block-wrap {
+                padding: rem-calc(58 0 0 35);
+                @include bp(lg) {
+                    padding: rem-calc(15 0 0 0);
+                }
+            }
+        }
+    }
+    &.company-col-list-block {
+        padding: rem-calc(95 0 0);
+        @include bp(tabletXl) {
+            padding: rem-calc(60 0 10);
+        }
+        @include bp(tabletsm) {
+            padding: rem-calc(40 0 10);
+        }
+        .heading {
+            h2 {
+                margin: rem-calc(0 0 13 0);
+            }
+        }
+        .column-block-list {
+            .column-list-block-wrap {
+                padding: rem-calc(59 0 0 25);
+                @include bp(lg) {
+                    padding: rem-calc(15 0 0 0);
+                }    
+            }
+        }
+    }
+    .heading {
+        h2 {
+            color: $dark-navy-blue;
+        }
+    }
+    .column-block-list {
+        margin-bottom: rem-calc(19);
+        .column-list-block-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            padding: rem-calc(40 0 0 35);
+            @include bp(lg) {
+                padding: rem-calc(15 0 0 0);
+            }
+            .column-list-block-icon {
+                width: rem-calc(50);
+                img {
+                    max-width: rem-calc(50);
+                    width: 100%;
+                    @include bp(tabletXl) {
+                        max-width: rem-calc(35);
+                    }
+                }
+            }
+            .column-list-block-cont {
+                padding: rem-calc(0 12 0 26);
+                width: calc(100% - 50px);
+                @include bp(tabletXl) {
+                    width: calc(100% - 50px);
+                    padding: rem-calc(0 10 0 15);
+                }
+                h3 {
+                    color: $blue;
+                    font-size: rem-calc(24);
+                    font-weight: $bold;
+                    font-family: $zeitung;
+                    margin-bottom: rem-calc(6);
+                    margin-top: -5px;
+                    line-height: 1.4;
+                    @include bp(lg) {
+                        font-size: rem-calc(22);
+                    }
+                    @include bp(tabletXl) {
+                        font-size: rem-calc(20);
+                    }
+                }
+                ul {
+                    padding: rem-calc(0 0 20 20);
+                    li {
+                        color: $gray;
+                        font-size: rem-calc(20);
+                        margin: rem-calc(0 0 5 0);
+                        @include bp(tabletXl) {
+                            font-size: rem-calc(18);
+                        }
+                        @include bp(tabletsm) {
+                            font-size: rem-calc(16);
+                        }
+                        a {
+                            color: #1362a2;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    .featured-news-btn {
+        a {
+            position: relative;
+            &:hover {
+                &:before {
+                    border-left-color: $parrot-green;
+                }
+            }
+            &:focus {
+                &:before {
+                    border-left-color: $parrot-green;
+                }
+            }
+            &:before {
+                content: "";
+                border-left: 11px solid $white;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid transparent;
+                border-top: 7px solid transparent;
+                position: absolute;
+                right: 7px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

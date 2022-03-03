@@ -1,0 +1,227 @@
+footer {
+    padding: rem-calc(57 0 30);
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 25);
+    }
+    .footer-logo {
+        padding: rem-calc(0 0 35);
+        @include bp(tabletsm) {
+            padding: rem-calc(0 0 20);
+        }
+        img {
+            max-width: rem-calc(175);
+            width: 100%;
+        }
+    }
+    .chat-icon {
+        text-align: right;
+        margin: -10px 0 0 0;
+        @include bp(tabletsm) {
+            margin: -5px 0 0 0;
+        }
+        img {
+            max-width: rem-calc(50);
+            width: 100%;
+            @include bp(tabletsm) {
+                max-width: rem-calc(40);
+            }
+        }
+    }
+    .footer-address {
+        max-width: rem-calc(340);
+        padding: 0 0 0 0;
+        width: 100%;
+        @include bp(tabletsm) {
+            margin: rem-calc(0 0 30 0);
+        }
+        h6 {
+            font-size: rem-calc(20);
+            line-height: 1.5;
+            font-weight: $bold;
+            color: $dark-black;
+            text-transform: uppercase;
+        }
+        address {
+            font-size: rem-calc(16);
+            line-height: 1.5;
+            font-weight: $medium;
+            color: $dark-navy-blue;
+            br {
+                display: block;
+            }
+            a {
+                font-weight: $bold;
+            }
+        }
+    }
+    .footer-menu {
+        padding: 0 0 0 0;
+        &.global-office {
+            ul {
+                li {
+                    a {
+                        text-transform: capitalize;
+                        &:hover {
+                            i {
+                                background-image: url(../images/Parasoft_arrow_light_blue.svg);
+                            }
+                        }
+                        i {
+                            background-image: url(../images/Parasoft_arrow_blue.svg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center center;
+                            width: 10px;
+                            height: 10px;
+                            position: absolute;
+                            right: -20px;
+                            top: 60%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+        @include bp(tabletsm) {
+            padding: rem-calc(0);
+            margin: rem-calc(0 0 30 0);
+        }
+        h6 {
+            font-size: rem-calc(20);
+            line-height: 1.5;
+            font-weight: $bold;
+            color: $dark-black;
+            text-transform: uppercase;
+            @include bp(lg) {
+                font-size: rem-calc(18);
+            }
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 54%;
+                font-size: rem-calc(16);
+                line-height: 1.5;
+                font-weight: $medium;
+                color: $dark-navy-blue;
+                list-style-type: none;
+                margin: rem-calc(0 0 6.3 0);
+                &:nth-of-type(2n) {
+                    width: 46%; 
+                }
+                @include bp(xsm) {
+                    width: 100%;
+                }
+                a {
+                    font-size: rem-calc(16);
+                    line-height: 1.5;
+                    font-weight: $medium;
+                    color: #00385f;
+                    text-transform: uppercase;
+                    position: relative;
+                    &:hover {
+                        color: $blue;
+                        i {
+                            background-image: url(../images/Parasoft_arrow_light_blue.svg);
+                        }
+                    }
+                    @include bp(lg) {
+                        font-size: rem-calc(14);
+                    }
+                    i {
+                        background-image: url(../images/Parasoft_arrow_blue.svg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center center;
+                        width: 8px;
+                        height: 8px;
+                        position: absolute;
+                        left: -12px;
+                        top: 60%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        margin: rem-calc(56 0 0 0);
+        @include bp(tabletsm) {
+            margin: rem-calc(0 0 0 0);
+        }
+        p {
+            color: $gray;
+            font-size: rem-calc(15);
+            display: inline-block;
+            vertical-align: middle;
+            margin: rem-calc(0 14 0 0);
+            @include bp(tabletmd) {
+                margin: rem-calc(0 4 0 0);
+            }
+        }
+        ul {
+            display: inline-block;
+            vertical-align: middle;
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                a {
+                    color: $gray;
+                    font-size: rem-calc(16);
+                    margin: 0 0px 0 0;
+                    padding: 0 8px 0 8px;
+                    border-left: 1px solid $gray;
+                    display: inline-block;
+                    vertical-align: top;
+                    @include bp(tabletmd) {
+                        padding: 0 4px 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    .social-icon-wrap {
+        margin: rem-calc(40 0 0 0);
+        @include bp(tabletsm) {
+            margin: rem-calc(0 0 15 0);
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            @include bp(tabletsm) {
+                justify-content: flex-start;
+            }
+            li {
+                width: auto;
+                margin: rem-calc(0 10 0 0);
+                list-style-type: none;
+                &:last-child {
+                    margin: rem-calc(0);
+                }
+                a {
+                    width: rem-calc(40);
+                    height: rem-calc(40);
+                    background-color: $blue;
+                    color: $white;
+                    border-radius: 50%;
+                    padding: 9px 0;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: 18px;
+                    &:hover {
+                        background-color: $dark-black;
+                    }
+                }
+            }
+        }
+    }
+    .copyright-order {
+        @include bp(tabletsm) {
+            order: 2;
+        }
+    }
+    
+}

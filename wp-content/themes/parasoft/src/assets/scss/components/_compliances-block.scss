@@ -1,0 +1,154 @@
+.compliances-block-sec {
+    position: relative;
+    padding: rem-calc(108 0 70);
+    @include bp(tabletXl) {
+        padding: rem-calc(60 0 60);
+    }
+    @include bp(tabletsm) {
+        padding: rem-calc(40 0 40);
+    }
+    .heading {
+        max-width: 890px;
+        margin: 0 auto 40px;
+        width: 100%;
+        h2 {
+            color: $dark-navy-blue;
+        }
+        p {
+            color: $gray;
+            font-size: rem-calc(21);
+            @include bp(tabletsm) {
+                font-size: rem-calc(18);
+            }
+        }
+    }
+    .compliances-block-wrap {
+        max-width: 1085px;
+        margin: 0 auto;
+        width: 100%;
+        .compliances-block-list {
+            &:last-child {
+                max-width: 66.66%;
+                flex: 66.66%;
+                @include bp(tabletmd) {
+                    max-width: 50%;
+                    flex: 50%;
+                }
+                @include bp(tabletsm) {
+                    max-width: 100%;
+                    flex: 100%;
+                }
+            }
+            .compliances-block {
+                width: 100%;
+                text-align: center;
+                margin: rem-calc(0 0 25 0);
+                a {
+                    font-size: rem-calc(24);
+                    font-weight: $bold;
+                    font-family: $zeitung;
+                    border: 1px solid $dark-navy-blue;
+                    padding: rem-calc(19 50);
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-transform: uppercase;
+                    width: 100%;
+                    color: $dark-navy-blue;
+                    position: relative;
+                    @include bp(lg) {
+                        font-size: rem-calc(20);
+                    }
+                    @include bp(tabletXl) {
+                        font-size: rem-calc(18);
+                        padding: rem-calc(12 40);
+                    }
+                    @include bp(xsm) {
+                        padding: rem-calc(12 25);
+                    }
+                    &:hover {
+                        background-color: #8ad32f;
+                        color: $white;
+                        border-color: #8ad32f;
+                        i {
+                            visibility: visible;
+                            opacity: 1;
+                            @include transition(0.5s, all, ease-in-out);
+                        }
+                    }
+                    i {
+                        opacity: 0;
+                        @include transition(0.5s, all, ease-in-out);
+                        visibility: hidden;
+                        background-image: url(../images/Parasoft_arrow_white.svg);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center center;
+                        width: 10px;
+                        height: 10px;
+                        position: relative;
+                        right: -5px;
+                        top: 3px;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        font-style: normal;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .compliances-block-full {
+            width: 100%;
+            text-align: center;
+            margin: rem-calc(0 0 24 0);
+            a {
+                font-size: rem-calc(24);
+                font-weight: $bold;
+                font-family: $zeitung;
+                border: 1px solid $dark-navy-blue;
+                padding: rem-calc(19 50);
+                display: inline-block;
+                vertical-align: middle;
+                text-transform: uppercase;
+                width: 100%;
+                color: $dark-navy-blue;
+                @include bp(lg) {
+                    font-size: rem-calc(20);
+                }
+                @include bp(tabletsm) {
+                    font-size: rem-calc(18);
+                    padding: rem-calc(12 40);
+                }
+                @include bp(xsm) {
+                    padding: rem-calc(12 25);
+                }
+                &:hover {
+                    background-color: #8ad32f;
+                    color: $white;
+                    border-color: #8ad32f;
+                    i {
+                        visibility: visible;
+                        opacity: 1;
+                        @include transition(0.5s, all, ease-in-out);
+                    }
+                }
+                i {
+                    opacity: 0;
+                    @include transition(0.5s, all, ease-in-out);
+                    visibility: hidden;
+                    margin: 0 0 0 0;
+                    font-style: normal;
+                    height: auto;
+                    line-height: 0;
+                    position: relative;
+                    color: $white;
+                    font-size: rem-calc(24);
+                    line-height: normal;
+                    font-family: $Poppins;
+                    font-weight: $normal;
+                }
+            }
+        }
+    }
+}
