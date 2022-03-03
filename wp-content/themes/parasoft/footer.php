@@ -20,9 +20,6 @@ $privacy      = get_field( 'privacy', 'options' );
 $terms_of_use = get_field( 'terms_of_use', 'options' );
 $social_media = get_field( 'social_media', 'options' );
 
-
-
-
 ?>
 <footer>
 	<div class="footer-main">
